@@ -1,0 +1,2 @@
+file_id,case_id,gender,race,ethnicity,year_of_birth,year_of_death,sample_id,sample_type,tissue_of_origin,tumor_stage,tumor_grade,age_at_diagnosis,primary_diagnosis,classification_of_tumor,prior_malignancy,vital_status,morphology,progression_or_recurrence
+0197e35a-79b9-43cc-baab-10264da1b725,802dbd0d-ef07-4c91-ab8d-1dd39532e947,male,white,hispanic or latino,1970,2001,c6214f9b-35c8-424c-b6fe-bec1a9317c0a,Primary Tumor,c74.0,stage iii,not reported,11171.0,c74.0,not reported,not reported,dead,8370/3,not reported
