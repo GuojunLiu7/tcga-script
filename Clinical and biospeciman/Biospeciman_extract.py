@@ -40,7 +40,7 @@ def get_df(link):
 
 
 def biospecimen_matrix(y, main_df):
-  src = "X:\\Su Lab\\TCGA\\Data\\Download\\" + y + "-Biospecimen"
+  src = "/home/yuwang/SuLab/TCGA/Data/Download/" + y + "-Biospecimen"
   for root, dirs, files in os.walk(src):
     for file in files:
       filesrc = os.sep.join([root, file])
@@ -52,7 +52,7 @@ def biospecimen_matrix(y, main_df):
 def write_matrix(y):
   main_df = pd.DataFrame()
   main_df = biospecimen_matrix(y, main_df)
-  output_path = "X:\\Su Lab\\TCGA\\Data\\Matrix\\" + y + '-biospecimen-matrix'
+  output_path = "/home/yuwang/SuLab/TCGA/Data/Matrix/" + y + "/" + y + '-biospecimen-matrix'
   #bcr_sample_barcode
   main_df = main_df.set_index('bcr_sample_uuid')
   
@@ -60,8 +60,9 @@ def write_matrix(y):
   #print(main_df)
   main_df.to_csv(output_path + ".csv", sep = '\t')
   main_df = pd.DataFrame()
-  print("matrix generated:" + y)
+  print("biospecimen matrix generated:" + y)
 
 if __name__ == '__main__':
-  y = "TCGA-BRCA"
-  write_matrix(y)
+  project_list = ['TCGA-ACC', 'TCGA-BLCA', 'TCGA-BRCA', 'TCGA-CESC', 'TCGA-CHOL', 'TCGA-COAD', 'TCGA-DLBC', 'TCGA-ESCA', 'TCGA-GBM', 'TCGA-HNSC', 'TCGA-KICH', 'TCGA-KIRC', 'TCGA-KIRP', 'TCGA-LAML', 'TCGA-LGG', 'TCGA-LIHC', 'TCGA-LUAD', 'TCGA-LUSC', 'TCGA-MESO', 'TCGA-OV', 'TCGA-PAAD', 'TCGA-PCPG', 'TCGA-PRAD', 'TCGA-READ', 'TCGA-SARC', 'TCGA-SKCM', 'TCGA-STAD', 'TCGA-TGCT', 'TCGA-THCA', 'TCGA-THYM', 'TCGA-UCEC', 'TCGA-UCS', 'TCGA-UVM']
+  for y in project_list:
+    write_matrix(y)
