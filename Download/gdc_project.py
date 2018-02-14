@@ -5,7 +5,7 @@ import re
 
 from string import Template
 
-data_dir = "X:\Su Lab\TCGA\Data"
+data_dir = "/home/yuwang/SuLab/TCGA/Data"
 
 url_http = "https://api.gdc.cancer.gov/"
 

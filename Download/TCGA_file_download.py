@@ -4,7 +4,7 @@ import json
 import re
 from string import Template
 
-data_dir = "X:\Su Lab\TCGA\Data"
+data_dir = "/home/yuwang/SuLab/TCGA/Data"
 
 url_http = "https://api.gdc.cancer.gov/"
 
@@ -29,7 +29,7 @@ project_list = gdc_project.write_project_library(url_project, "TCGA")
 
 
 os.chdir(data_dir)
-folder_template = Template('\Download\$t')
+folder_template = Template('/Download/$t')
 file_template = Template("$t.txt")
 data_endpt = "https://api.gdc.cancer.gov/data"
 for y in project_list:
